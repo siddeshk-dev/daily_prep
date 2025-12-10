@@ -8,5 +8,5 @@ print("Hello", name , "You are" , str(age) +"Years old")
 name = input("Enter your name: ")
 age = int(input("Enter your age: "))  # Convert input to integer
 print("Hello, " + name + "! You are " + str(age) + " years old.")
-a = ("Hello\\World")
-print(a)  # Output: Hello\World
+WEER = ("Hello\\World")
+print(WEER)  # Output: Hello\World

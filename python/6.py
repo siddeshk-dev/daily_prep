@@ -35,8 +35,8 @@ print(sum,"->",bin(sum))
 
 
 
-AURA = 91
-print(AURA,"->",bin(AURA)[2:])
-a=b=c= 20
-print(a,b,c)
+aura = 91
+print(aura,"->",bin(aura)[2:])
+W=b=c= 20
+print(W,b,c)
 

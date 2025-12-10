@@ -58,7 +58,9 @@ it will give me this typr of value like siddesh.k loves girl Age difference is :
 This is a multi-line comment.
 It can span multiple lines.
 ()""")
- This is a single-line comment. It explains that the following code takes input from the user.it works as a (#)format
-  (#) This is a single-line comment
+This is a single-line comment. It explains that the following code takes input from the user.it works as a (#)format
+(#) This is a single-line comment
+'''
+NAME = ("SIDDESH.K")
+print(NAME)
 
-  '''

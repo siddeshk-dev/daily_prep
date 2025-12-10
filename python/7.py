@@ -22,10 +22,10 @@ fruits = ["apple", "banana", "cherry"]
 #print(fruits)  # Output: cherry
 fruits[1] = "orange"
 print(fruits)  # Output: ['apple', 'orange', 'cherry']
+
 matrix = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
 ]
 
-# Accessing elements in a nested list
