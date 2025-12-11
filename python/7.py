@@ -23,9 +23,19 @@ fruits = ["apple", "banana", "cherry"]
 fruits[1] = "orange"
 print(fruits)  # Output: ['apple', 'orange', 'cherry']
 
-matrix = [
+match= [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
 ]
 
+import time
+import random
+
+it = [
+    "Working...",
+    "Still running...",
+    "Processing...",
+    "Keeping the program alive...",
+    "Running smoothly..."
+]
