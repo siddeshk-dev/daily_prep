@@ -1,23 +1,43 @@
-numbers = [1, 2, 3]
-x, y, z = numbers
-print(x, y, z)  # Output: 1 2 3
-name = (1.00,66.99)
-x , y  = name
-print(x , y )  # Output: siddesh niveen
-x = 5
-print(x)
-numbers = [1, 2, 3]
-x, y, z = numbers
-print(x, y, z)  # Output: 1 2 3
-x = 10
-print(x)  # Output: 10
-name = "  siddesh.k    "
-print(name.upper()) 
-name = " naveen "
-print(name.replace("naveen" , "siddesh"))
-seentx = '''siddesh said"hello"
-"naveen said 'hi'''
-print(seentx)
-_name = '''siddesh said "hello"
-naveen said "hi"'''
-print(_name*30)
+import os
+
+FILENAME = "tasks.txt"
+
+def load_tasks():
+    if not os.path.exists(FILENAME):
+        return []
+    with open(FILENAME, "r") as f:
+        return [line.strip() for line in f.readlines()]
+
+def save_tasks(tasks):
+    with open(FILENAME, "w") as f:
+        for t in tasks:
+            f.write(t + "\n")
+
+def show_menu():
+    print("\n===============================")
+    print("         TO-DO MANAGER")
+    print("===============================")
+    print("1. View Tasks")
+    print("2. Add Task")
+# LONG PYTHON PRINTING PROGRAM – PATTERN 1
+# LONG PYTHON PRINTING PROGRAM – PATTERN 1
+
+print("Triangle Pattern\n")
+for i in range(1, 21):
+    print("*" * i)
+
+print("\nSquare Pattern\n")
+for i in range(10):
+    print("#" * 25)
+
+print("\nNumber Pyramid\n")
+for i in range(1, 15):
+    for j in range(1, i + 1):
+        print(j, end=" ")
+    print()
+
+print("\nA–Z Letters\n")
+for c in range(65, 91):
+    print(chr(c), end=" ")
+
+   
