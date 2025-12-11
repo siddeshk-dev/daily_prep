@@ -26,7 +26,7 @@ elif age >= 60:
 else:
     print("tou pay the full fare. ")\
 
-cities = ["Bengaluru", "RAMANAGARA", "Hubballi", "Mangaluru"]
+cities = ["ganga", "RAMANAGARA", "Hubballi", "Mangaluru"]
 for city in cities:
      print(city)
 
@@ -37,5 +37,9 @@ for letter in name:
 for i in range(1, 6):
     for j in range(1, 6):
         print(f"{i} x {j} = {i * j}")
-    print()  # To print an empty line after each table 
+    print() 
+     # To print an empty line after each table 
     
+print("Daily update")
+for day in range(1, 8):
+    print(f"Day {day}: it's my daily routine!")

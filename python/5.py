@@ -24,7 +24,7 @@ def view_books():
         print(f"{i + 1}. {b['name']} by {b['author']} ({b['year']})")
     print("================================\n")
 
-def search_book():
+def  search_book():
     q = input("Enter book name to search: ")
     print("Search results:")
 

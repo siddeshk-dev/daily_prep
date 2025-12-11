@@ -1,8 +1,8 @@
 questions = [
-    {"q": "What is the capital of India?", "a": "Delhi"},
-    {"q": "What is 5 + 7?", "a": "12"},
-    {"q": "Who wrote the Ramayana?", "a": "Valmiki"},
-    {"q": "What is the largest planet?", "a": "Jupiter"},
+    {"t": "What is the capital of India?", "a": "Delhi"},
+    {"t": "What is 5 + 7?", "a": "12"},
+    {"t": "Who wrote the Ramayana?", "a": "Valmiki"},
+    {"t": "What is the largest planet?", "a": "Jupiter"},
 ]
 
 score = 0
@@ -13,7 +13,7 @@ print("=============================")
 
 for i, item in enumerate(questions, start=1):
     print(f"\nQuestion {i}:")
-    print(item["q"])
+    print(item["t"])
     ans = input("Your answer: ")
 
     if ans.strip().lower() == item["a"].lower():
