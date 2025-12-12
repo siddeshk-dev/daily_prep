@@ -26,9 +26,10 @@ elif age >= 60:
 else:
     print("tou pay the full fare. ")\
 
-cities = ["ganga", "siddu vilage", "Hubballi", "Mangaluru"]
+cities = ["code is 562159", "ramanagara", "Hubballi", "Mangaluru"]
 for city in cities:
      print(city)
+
 
 name = "Karnataka"
 for letter in name:

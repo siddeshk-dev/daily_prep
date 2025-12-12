@@ -4,9 +4,7 @@ questions = [
     {"t": "Who wrote the Ramayana?", "a": "Valmiki"},
     {"t": "What is the largest planet?", "a": "Jupiter"},
 ]
-
 score = 0
-
 print("=============================")
 print("         QUIZ GAME")
 print("=============================")

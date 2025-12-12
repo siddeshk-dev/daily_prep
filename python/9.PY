@@ -22,6 +22,7 @@ while True:
     print(f"Time Running: {hours:02d}:{minutes:02d}:{seconds:02d}")
     time.sleep(1)
 
+
     seconds += 1
     if seconds == 60:
         seconds = 0
