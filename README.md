@@ -31,15 +31,15 @@ Develop mini-projects from my learnings
 
 📈 Daily Rules I Follow
 
-✔ Write at least 1 commit every day
+Write at least 1 commit every day
 
-✔ Solve 1–3 DSA questions
+Solve 1–3 DSA questions
 
-✔ Learn one new concept
+Learn one new concept
 
-✔ Refactor old code for readability
+Refactor old code for readability
 
-✔ Push everything before the end of the day
+Push everything before the end of the day
 
 Consistency increases skills more than speed.
 Even small but steady progress makes a huge difference.
