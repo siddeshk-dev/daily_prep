@@ -20,10 +20,6 @@ I update this section every day with notes, code, and progress.
 - Build strong Python + DSA foundation  
 
 ---
-
-## 🧠 Motivation
-> “1 hour every day is better than 7 hours on one day.”
-
 ---
 
 ## 🚀 Keep Coding..
