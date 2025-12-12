@@ -1,5 +1,6 @@
 students = []
 
+
 def add_student():
     name = input("Enter student name: ")
     age = input("Enter student age: ")
@@ -14,6 +15,7 @@ def add_student():
     students.append(student)
     print("Student added successfully!\n")
 
+
 def view_students():
     if not students:
         print("No students available.\n")
@@ -23,6 +25,7 @@ def view_students():
     for i, s in enumerate(students):
         print(f"{i + 1}. Name: {s['name']} | Age: {s['age']} | Marks: {s['marks']}")
     print("==================================\n")
+
 
 def remove_student():
     view_students()
@@ -44,9 +47,11 @@ def menu():
     print("4. Exit")
     print("===================================")
 
+
 while True:
     menu()
     choice = input("Enter your choice: ")
+
 
     if choice == "1":
         add_student()

@@ -5,7 +5,7 @@ FILENAME = "tasks.txt"
 def load_tasks():
     if not os.path.exists(FILENAME):
         return []
-    with open(FILENAME, "r") as f:
+    with open(FILENAME, " r ") as f:
         return [line.strip() for line in f.readlines()]
 
 def save_tasks(tasks):
@@ -33,11 +33,11 @@ for i in range(10):
 print("\nNumber Pyramid\n")
 for i in range(1, 15):
     for j in range(1, i + 1):
-        print(j, end=" ")
+        print(j, end="      ")
     print()
 
 print("\nA–Z Letters\n")
 for c in range(65, 91):
-    print(chr(c), end=" ")
+    print(chr(c), end="     ")
 
-   
+

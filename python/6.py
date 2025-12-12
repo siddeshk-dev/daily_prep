@@ -20,6 +20,7 @@ for i, item in enumerate(questions, start=1):
         print("Correct!")
         score += 1
     else:
+        
         print("Wrong! Correct answer:", item["a"])
 
 print("\n=============================")

@@ -2,7 +2,7 @@ import time
 import random
 
 messages = [
-    " not Working...",
+    " Working...",
     "Still running...",
     "Processing...",
     "Keeping the program alive...",
