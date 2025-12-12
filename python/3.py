@@ -93,11 +93,13 @@ while True:
         score = 0
         pen.clear()
         pen.write(f"Score: {score}  High Score: {high_score}", align="center", font=("Courier", 24, "normal"))
+        
 
     if head.distance(food) < 20:
         x = random.randint(-280, 280)
         y = random.randint(-280, 280)
         food.goto(x, y)
+
 
         new_segment = turtle.Turtle()
         new_segment.speed(0)
@@ -106,6 +108,7 @@ while True:
         new_segment.penup()
         segments.append(new_segment)
 
+
         score += 10
 
         if score > high_score:
@@ -113,6 +116,7 @@ while True:
         
         pen.clear()
         pen.write(f"Score: {score}  High Score: {high_score}", align="center", font=("Courier", 24, "normal"))
+
 
     for i in range(len(segments)-1, 0, -1):
         x = segments[i-1].xcor()
@@ -124,6 +128,7 @@ while True:
         y = head.ycor()
         segments[0].goto(x, y)
 
+
     move()
 
     for segment in segments:
@@ -131,6 +136,7 @@ while True:
             time.sleep(1)
             head.goto(0, 0)
             head.direction = "stop"
+
 
             for segment in segments:
                 segment.goto(1000, 1000)

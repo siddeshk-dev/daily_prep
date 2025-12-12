@@ -26,7 +26,7 @@ elif age >= 60:
 else:
     print("tou pay the full fare. ")\
 
-cities = ["ganga", "RAMANAGARA", "Hubballi", "Mangaluru"]
+cities = ["ganga", "siddu vilage", "Hubballi", "Mangaluru"]
 for city in cities:
      print(city)
 
