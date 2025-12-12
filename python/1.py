@@ -3,7 +3,6 @@ n = 1
 while True:
     print(10 * n )
     n += 1
-
 """
 """
 import time
@@ -16,3 +15,10 @@ while True:
 """  
 for i in range(1, 1000000000000000):
     print("Line number:", i)
+n = int(input("Enter a number: "))
+fact = 1
+
+for i in range(1, n+1):
+    fact *= i
+
+print("Factorial =", fact)

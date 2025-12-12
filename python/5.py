@@ -14,6 +14,7 @@ def add_book():
     library.append(book)
     print("Book added!\n")
 
+
 def view_books():
     if not library:
         print("No books in library.\n")

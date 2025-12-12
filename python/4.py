@@ -2,6 +2,7 @@ import os
 
 FILENAME = "tasks.txt"
 
+
 def load_tasks():
     if not os.path.exists(FILENAME):
         return []
@@ -12,6 +13,7 @@ def save_tasks(tasks):
     with open(FILENAME, "w") as f:
         for t in tasks:
             f.write(t + "\n")
+
 
 def show_menu():
     print("\n===============================")

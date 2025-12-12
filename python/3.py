@@ -78,6 +78,8 @@ wn.onkeypress(go_down, "s")
 wn.onkeypress(go_left, "a")
 wn.onkeypress(go_right, "d")
 
+
+
 while True:
     wn.update()
 
