@@ -22,3 +22,6 @@ for i in range(1, n+1):
     fact *= i
 
 print("Factorial =", fact)
+x = 10
+x *= 5
+print(x)

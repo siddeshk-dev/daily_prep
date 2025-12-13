@@ -71,15 +71,11 @@ def move():
     if head.direction == "right":
         x = head.xcor()
         head.setx(x + 20)
-
 wn.listen()
 wn.onkeypress(go_up, "w")
 wn.onkeypress(go_down, "s")
 wn.onkeypress(go_left, "a")
 wn.onkeypress(go_right, "d")
-
-
-
 while True:
     wn.update()
 

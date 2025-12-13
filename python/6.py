@@ -4,11 +4,11 @@ questions = [
     {"t": "Who wrote the Ramayana?", "a": "Valmiki"},
     {"t": "What is the largest planet?", "a": "Jupiter"},
 ]
+
 score = 0
 print("=============================")
 print("         QUIZ GAME")
 print("=============================")
-
 for i, item in enumerate(questions, start=1):
     print(f"\nQuestion {i}:")
     print(item["t"])
@@ -20,7 +20,6 @@ for i, item in enumerate(questions, start=1):
     else:
         
         print("Wrong! Correct answer:", item["a"])
-
 print("\n=============================")
 print("         RESULT")
 print("=============================")

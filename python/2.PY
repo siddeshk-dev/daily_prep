@@ -30,7 +30,6 @@ def remove_student():
         print("Student removed!\n")
     else:
         print("Invalid choice!\n")
-
 def menu():
     print("===================================")
     print("        STUDENT MANAGEMENT")
@@ -40,8 +39,6 @@ def menu():
     print("3. Remove Student")
     print("4. Exit")
     print("===================================")
-
-
 while True:
     menu()
     choice = input("Enter your choice: ")
