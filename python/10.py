@@ -125,5 +125,9 @@ count = 0
 for ch in text:
     if ch in vowels:
         count += 1
-
 print("Number of vowels:", count)
+word = "APPLE"
+
+for i in range(len(word)):
+    print(word[i], "is at index", i)
+

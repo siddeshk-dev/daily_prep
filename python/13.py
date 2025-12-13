@@ -9,10 +9,7 @@ matrix = [
 ]
 print(matrix[1][2])   # 2 (row 0, column 1)
 name = "Siddesh k"
-
 print(name[2:6:3])# out is
-
-
 print(len(name))
 name = input("Enter your name: ")
 name2 = input("Enter your name: ")
@@ -23,3 +20,8 @@ print(f' {name2} says "{message2}"')
 x = 10
 x *= 5
 print(x) 
+a = 5
+b = 10
+a, b = b, a
+print(a, b)
+

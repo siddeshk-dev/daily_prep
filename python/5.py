@@ -72,3 +72,7 @@ while True:
     else:
 
         print("Invalid choice!\n")
+name = "Siddesh"
+msg = "Hello"
+
+print(name + ' said "' + msg + '"')

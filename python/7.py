@@ -11,4 +11,7 @@ messages = [
 while True:
     print(random.choice(messages))
     time.sleep(2)
+word = "APPLE"
+chars = list(word)
+print(chars)
 
