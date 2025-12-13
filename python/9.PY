@@ -24,4 +24,8 @@ while True:
     if minutes == 60:
         minutes = 0
         hours = 1
-   
+fruits = ["apple", "banana", "mango"]
+
+for index, value in enumerate(fruits):
+    print(index, value)
+  

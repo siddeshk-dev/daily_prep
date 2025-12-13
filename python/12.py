@@ -21,8 +21,7 @@ for ch in text:
         upper += 1
     elif ch.islower():
         lower += 1
-
-
 print(list)
 list[0]
-print(list)
+num = 7
+print("Even" if num % 2 == 0 else "Odd")

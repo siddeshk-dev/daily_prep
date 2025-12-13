@@ -25,5 +25,8 @@ print("         RESULT")
 print("=============================")
 print("Your Score:", score, "/", len(questions))
 print("Good job!" if score >= 3 else "Try again!")
+nums = [1, 2, 2, 3, 3, 4]
+unique = list(set(nums))
+print(unique)
 
 
