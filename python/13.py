@@ -1,0 +1,25 @@
+list = ["apple", 3, "banana", 10, "cherry", 11, "date"]
+print(list)
+list[0]
+print(list[0])
+# 2×3 matrix
+matrix = [
+    [1, 9, 3],
+    [4, 5, 6]
+]
+print(matrix[1][2])   # 2 (row 0, column 1)
+name = "Siddesh k"
+
+print(name[2:6:3])# out is
+
+
+print(len(name))
+name = input("Enter your name: ")
+name2 = input("Enter your name: ")
+message = input("Enter your message: ")
+message2 = input("Enter your message: ")
+print(f'{name} says "{message}"')
+print(f' {name2} says "{message2}"')
+x = 10
+x *= 5
+print(x) 

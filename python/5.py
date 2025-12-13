@@ -10,16 +10,12 @@ def add_book():
         "author": author,
         "year": year
     }
-
     library.append(book)
     print("Book added!\n")
-
-
 def view_books():
     if not library:
         print("No books in library.\n")
         return
-
     print("\n========= BOOK LIST =========")
     for i, b in enumerate(library):
         print(f"{i + 1}. {b['name']} by {b['author']} ({b['year']})")
@@ -46,7 +42,6 @@ def remove_book():
         print("Removed:", deleted['name'])
     else:
         print("Invalid choice")
-
 def menu():
     print("=====================================")
     print("        LIBRARY MANAGEMENT")

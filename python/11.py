@@ -50,3 +50,12 @@ n = int(input("Enter a number: "))
 
 for i in range(1, 9):
     print(n, "x", i, "=", n*i)
+    
+
+
+name = input("Enter your name: ")
+name2 = input("Enter your name: ")
+message = input("Enter your message: ")
+message2 = input("Enter your message: ")
+print(f'{name} says "{message}"')
+print(f' {name2} says "{message2}"')

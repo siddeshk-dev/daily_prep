@@ -1,8 +1,6 @@
 import os
 
 FILENAME = "tasks.txt"
-
-
 def load_tasks():
     if not os.path.exists(FILENAME):
         return []
