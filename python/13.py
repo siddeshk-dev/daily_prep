@@ -24,4 +24,10 @@ a = 5
 b = 10
 a, b = b, a
 print(a, b)
+word = "APPLE"
+
+for i in range(len(word)):
+    print(word[i], "is at index", i)
+num = 7
+print("Even" if num % 2 == 0 else "Odd")
 

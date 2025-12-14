@@ -56,3 +56,8 @@ while True:
     else:
         print("Invalid option! Try again.\n")
 
+    word = "PYTHON"
+for ch in word:
+    print(ch)
+num = 12345
+rev = 0

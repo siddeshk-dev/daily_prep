@@ -4,7 +4,6 @@ def add_book():
     name = input("Enter book name: ")
     author = input("Enter author: ")
     year = input("Enter year: ")
-
     book = {
         "name": name,
         "author": author,
@@ -33,7 +32,6 @@ def  search_book():
 
     if not found:
         print("No book found.")
-
 def remove_book():
     view_books()
     num = int(input("Enter book number to remove: "))
@@ -52,6 +50,7 @@ def menu():
     print("4. Remove Book")
     print("5. Exit")
     print("=====================================")
+
 
 while True:
     menu()
@@ -74,5 +73,8 @@ while True:
         print("Invalid choice!\n")
 name = "Siddesh"
 msg = "Hello"
-
 print(name + ' said "' + msg + '"')
+x = 10
+y = 20
+x, y = y, x
+print(x, y)
