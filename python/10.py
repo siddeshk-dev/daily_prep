@@ -108,6 +108,8 @@ while True:
     menu()
     choice = input("Enter your choice: ")
 
+
+
     if choice == "1":
         add_student()
     elif choice == "2":
@@ -118,6 +120,7 @@ while True:
         print("Exiting program...")
         break
     else:
+
         print("Invalid option! Try again.\n")
 text = input("Enter a string: ")
 vowels = "aeiouAEIOU"
@@ -128,6 +131,16 @@ for ch in text:
 print("Number of vowels:", count)
 word = "APPLE"
 
+
+
 for i in range(len(word)):
     print(word[i], "is at index", i)
+def add(a, b):
+    return a + b
+result = add(5, 3)
+print("Sum =", result)  
+
+
+
+
 

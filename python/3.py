@@ -78,21 +78,16 @@ wn.onkeypress(go_left, "a")
 wn.onkeypress(go_right, "d")
 while True:
     wn.update()
-
     if head.xcor() > 290 or head.xcor() < -290 or head.ycor() > 290 or head.ycor() < -290:
         time.sleep(1)
         head.goto(0, 0)
         head.direction = "stop"
-
         for segment in segments:
             segment.goto(1000, 1000)
-        
         segments.clear()
         score = 0
         pen.clear()
         pen.write(f"Score: {score}  High Score: {high_score}", align="center", font=("Courier", 24, "normal"))
-        
-
     if head.distance(food) < 20:
         x = random.randint(-280, 280)
         y = random.randint(-280, 280)
@@ -105,16 +100,11 @@ while True:
         new_segment.color("grey")
         new_segment.penup()
         segments.append(new_segment)
-
-
         score += 10
-
         if score > high_score:
             high_score = score
-        
         pen.clear()
         pen.write(f"Score: {score}  High Score: {high_score}", align="center", font=("Courier", 24, "normal"))
-
 
     for i in range(len(segments)-1, 0, -1):
         x = segments[i-1].xcor()
@@ -125,20 +115,14 @@ while True:
         x = head.xcor()
         y = head.ycor()
         segments[0].goto(x, y)
-
-
     move()
-
     for segment in segments:
         if segment.distance(head) < 20:
             time.sleep(1)
             head.goto(0, 0)
             head.direction = "stop"
-
-
             for segment in segments:
                 segment.goto(1000, 1000)
-
             segments.clear()
             score = 0
             pen.clear()
@@ -146,4 +130,6 @@ while True:
 
     time.sleep(delay)
 
-
+items = ["apple", "banana", "mango"]
+first = items[0]
+print(first)

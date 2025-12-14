@@ -33,9 +33,16 @@ for i in range(1, 6):
     print() 
      # To print an empty line after each table 
 print("Daily update")
+
+
 for day in range(1, 8):
     print(f"Day {day}: it's my daily routine!")
 fruits = ["apple", "banana", "mango"]
 
 if "apple" in fruits:
     print("Apple found")
+for i in range(5):
+    if i % 2 == 0:
+        pass
+    else:
+        print(i)

@@ -1,9 +1,12 @@
+
 cities = ["Bengaluru", "RAMANAGARA", "Hubballi", "Mangaluru"]
 for city in cities:
+     
      print(city)
 name = "Karnataka"
 for letter in name:
     print(letter)  
+
 for i in range(1, 6):
     for k in range(1, 6):
         print(f"{i} x {k} = {i * k}")
@@ -25,7 +28,11 @@ while True:
         minutes = 0
         hours = 1
 fruits = ["apple", "banana", "mango"]
-
 for index, value in enumerate(fruits):
     print(index, value)
   
+x = 10
+y = 20
+total = x + y
+print("Total =", total)
+students = []

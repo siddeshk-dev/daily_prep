@@ -56,4 +56,9 @@ print(f'{name} says "{message}"')
 print(f' {name2} says "{message2}"')
 name = "python"
 print(name[::-1])
+numbers = [1, 2, 3, 4, 5]
 
+for n in numbers:
+    pass
+print("Loop completed")
+students = []
