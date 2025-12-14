@@ -32,7 +32,6 @@ for i in range(1, n+1):
     fact *= i
 
 print("Factorial of", n, "is", fact)
-word = "APPLE"
+word = "banana"
 for ch in word:
     print(ch)
-    

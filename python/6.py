@@ -29,8 +29,8 @@ nums = [1, 2, 2, 3, 3, 4]
 unique = list(set(nums))
 
 print(unique)
-a = 5
-b = 3
+a = 5000
+b = 100
 c = a * b
 print("Product =", c)
 text = "hello"
