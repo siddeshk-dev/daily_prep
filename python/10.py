@@ -67,7 +67,7 @@ def add_student():
 
     student = {
         "name": name,
-        "age": age,
+        "age":  age,
         "marks": marks
     }
 
@@ -129,7 +129,7 @@ for ch in text:
     if ch in vowels:
         count += 1
 print("Number of vowels:", count)
-word = "APPLE"
+word = "banana"
 
 
 

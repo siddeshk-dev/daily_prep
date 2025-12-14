@@ -40,7 +40,7 @@ for day in range(1, 8):
 fruits = ["apple", "banana", "mango"]
 
 if "apple" in fruits:
-    print("Apple found")
+    print("banana found")
 for i in range(5):
     if i % 2 == 0:
         pass

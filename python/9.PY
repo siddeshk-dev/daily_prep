@@ -31,8 +31,8 @@ fruits = ["apple", "banana", "mango"]
 for index, value in enumerate(fruits):
     print(index, value)
   
-x = 10
-y = 20
+x = 1200
+y = 45000
 total = x + y
 print("Total =", total)
 students = []

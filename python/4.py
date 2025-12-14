@@ -17,7 +17,7 @@ def show_menu():
     print("1. View Tasks")
     print("2. Add Task")
 # LONG PYTHON PRINTING PROGRAM – PATTERN 1
-# LONG PYTHON PRINTING PROGRAM – PATTERN 1
+
 print("Triangle Pattern\n")
 for i in range(1, 21):
     print("*" * i)
@@ -29,9 +29,10 @@ for i in range(1, 15):
     for j in range(1, i + 1):
         print(j, end="      ")
     print()
-print("\nA–Z Letters\n")
+print("\nAZ Letters\n")
 for c in range(65, 91):
     print(chr(c), end="     ")
+
 text = "python"
 length = len(text)
 print("\n\nCharacters in the string 'python':")

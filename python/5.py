@@ -20,6 +20,7 @@ def view_books():
         print(f"{i + 1}. {b['name']} by {b['author']} ({b['year']})")
     print("================================\n")
 
+
 def  search_book():
     q = input("Enter book name to search: ")
     print("Search results:")
@@ -71,8 +72,8 @@ while True:
     else:
 
         print("Invalid choice!\n")
-name = "Siddesh"
-msg = "Hello"
+name = "naveen"
+msg = "hi"
 print(name + ' said "' + msg + '"')
 x = 10
 y = 20

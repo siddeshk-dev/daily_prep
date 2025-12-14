@@ -59,5 +59,5 @@ while True:
     word = "PYTHON"
 for ch in word:
     print(ch)
-num = 12345
+num = 200000
 rev = 0

@@ -1,4 +1,4 @@
-numbers = [12, 89, 45, 33, 10, 78]
+numbers = [112, 99, 45, 105, 31, 99]
 
 numbers.sort()
 print("Second Largest =", numbers[-2])

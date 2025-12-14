@@ -129,7 +129,6 @@ while True:
             pen.write(f"Score: {score}  High Score: {high_score}", align="center", font=("Courier", 24, "normal"))
 
     time.sleep(delay)
-
-items = ["apple", "banana", "mango"]
+items = ["fruits", "banana", "cherry", "apple"]
 first = items[0]
 print(first)
