@@ -26,8 +26,13 @@ list[0]
 num = 7
 print("Even" if num % 2 == 0 else "Odd")
 word = "APPLE"
-
 for i in range(len(word)):
     letter = word[i]
     print(f'{letter} is at index {i}')
 print("List:", numbers)
+print("Reversed List:", numbers[::-1])
+def greet(name):
+    return f"Hello, {name}!"
+message = greet("Alice")
+print(message)
+

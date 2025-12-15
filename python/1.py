@@ -21,8 +21,6 @@ for n in numbers:
     total += n
 
 print(total)
-
-
 for i in range(1, 1000000000000000):
     print("Line number:", i)
 n = int(input("Enter a number: "))

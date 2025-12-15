@@ -51,8 +51,6 @@ def menu():
     print("4. Remove Book")
     print("5. Exit")
     print("=====================================")
-
-
 while True:
     menu()
     choice = input("Enter your choice: ")
@@ -66,11 +64,9 @@ while True:
     elif choice == "4":
         remove_book()
     elif choice == "5":
-        
         print("Exiting program...")
         break
     else:
-
         print("Invalid choice!\n")
 name = "naveen"
 msg = "hi"

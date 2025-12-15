@@ -7,7 +7,7 @@ while num > 0:
     num //= 10
 
 print("Reversed number:", rev)
-numbers = [12, 3000, 88, 99, 874, 200]
+numbers = [12, 3000, 8800, 9977, 87400, 20022]
 largest = numbers[0]
 
 for n in numbers:

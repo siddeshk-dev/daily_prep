@@ -32,7 +32,6 @@ for i in range(1, 15):
 print("\nAZ Letters\n")
 for c in range(65, 91):
     print(chr(c), end="     ")
-
 text = "python"
 length = len(text)
 print("\n\nCharacters in the string 'python':")
