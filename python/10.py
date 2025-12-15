@@ -130,15 +130,14 @@ for ch in text:
         count += 1
 print("Number of vowels:", count)
 word = "banana"
-
-
-
 for i in range(len(word)):
     print(word[i], "is at index", i)
 def add(a, b):
     return a + b
 result = add(5, 3)
 print("Sum =", result)  
+def greet(name):
+    return f"Hello, {name}!"
 
 
 

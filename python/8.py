@@ -37,8 +37,7 @@ print("Daily update")
 
 for day in range(1, 8):
     print(f"Day {day}: it's my daily routine!")
-fruits = ["apple", "banana", "mango"]
-
+fruits = ["apple",  "easy", "mango"]
 if "apple" in fruits:
     print("banana found")
 for i in range(5):

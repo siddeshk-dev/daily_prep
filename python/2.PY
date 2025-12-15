@@ -3,13 +3,11 @@ def add_student():
     name = input("Enter student name: ")
     age = input("Enter student age: ")
     marks = input("Enter student marks: ")
-
     student = {
         "name": name,
         "age": age,
         "marks": marks
     }
-
     students.append(student)
     print("Student added successfully!\n")
 def view_students():
@@ -42,8 +40,6 @@ def menu():
 while True:
     menu()
     choice = input("Enter your choice: ")
-
-
     if choice == "1":
         add_student()
     elif choice == "2":
@@ -55,7 +51,6 @@ while True:
         break
     else:
         print("Invalid option! Try again.\n")
-
     word = "PYTHON"
 for ch in word:
     print(ch)

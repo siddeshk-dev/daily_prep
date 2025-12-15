@@ -1,7 +1,6 @@
 
 cities = ["Bengaluru", "RAMANAGARA", "Hubballi", "Mangaluru"]
-for city in cities:
-     
+for city in cities:     
      print(city)
 name = "Karnataka"
 for letter in name:
@@ -29,10 +28,16 @@ while True:
         hours = 1
 fruits = ["apple", "banana", "mango"]
 for index, value in enumerate(fruits):
-    print(index, value)
-  
+    print(index, value)  
 x = 1200
 y = 45000
 total = x + y
 print("Total =", total)
 students = []
+def add_student():
+    name = input("Enter student name: ")
+    age = int(input("Enter student age: "))
+    marks = float(input("Enter student marks: "))
+    student = {"name": name, "age": age, "marks": marks}
+    students.append(student)
+    print("Student added!\n")
