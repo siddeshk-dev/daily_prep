@@ -45,3 +45,12 @@ for i in range(5):
         pass
     else:
         print(i)
+with open("log.txt", "r") as f:
+    lines = f.readlines()
+
+errors = 0
+for line in lines:
+    if "ERROR" in line:
+        errors += 1
+
+print("Total Errors:", errors)
