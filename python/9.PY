@@ -1,11 +1,10 @@
 
-cities = ["Bengaluru", "RAMANAGARA", "Hubballi", "Mangaluru"]
+cities = ["Bengaluru", "RAMANAGARA", "Hubba", "Mangaluru"]
 for city in cities:     
      print(city)
 name = "Karnataka"
 for letter in name:
     print(letter)  
-
 for i in range(1, 6):
     for k in range(1, 6):
         print(f"{i} x {k} = {i * k}")

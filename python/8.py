@@ -33,8 +33,6 @@ for i in range(1, 6):
     print() 
      # To print an empty line after each table 
 print("Daily update")
-
-
 for day in range(1, 8):
     print(f"Day {day}: it's my daily routine!")
 fruits = ["apple",  "easy", "mango"]
@@ -47,10 +45,8 @@ for i in range(5):
         print(i)
 with open("log.txt", "r") as f:
     lines = f.readlines()
-
 errors = 0
 for line in lines:
     if "ERROR" in line:
         errors += 1
-
 print("Total Errors:", errors)
