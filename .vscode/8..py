@@ -1,98 +1,139 @@
-import sqlite3
-from datetime import datetime
+students = {}
 
-# ---------- DATABASE CONNECTION ----------
-conn = sqlite3.connect("bank.db")
-cursor = conn.cursor()
+# ---------- PRINT HELPERS ----------
+def line():
+    print("=" * 60)
 
-# ---------- CREATE TABLES ----------
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT UNIQUE,
-    password TEXT,
-    balance INTEGER
-)
-""")
+def header(title):
+    line()
+    print(title.center(60))
+    line()
 
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS transactions (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER,
-    action TEXT,
-    amount INTEGER,
-    date TEXT
-)
-""")
-conn.commit()
+# ---------- SAFE INPUT ----------
+def safe_int(message):
+    while True:
+        value = input(message)
+        if value.isdigit():
+            return int(value)
+        else:
+            print("❌ Enter numbers only!")
 
+# ---------- CORE FUNCTIONS ----------
+def add_student():
+    header("ADD STUDENT")
+    roll = input("Roll Number: ").strip()
 
-# ---------- ACCOUNT FUNCTIONS ----------
-def create_account():
-    print("\n--- Create Account ---")
-    username = input("Username: ")
-    password = input("Password: ")
+    if roll in students:
+        print("❌ Roll number already exists!")
+        return
 
-    try:
-        cursor.execute(
-            "INSERT INTO users (username, password, balance) VALUES (?, ?, ?)",
-            (username, password, 0)
-        )
-        conn.commit()
-        print("✅ Account created successfully!")
-    except:
-        print("❌ Username already exists!")
+    name = input("Name: ").strip()
+    marks = safe_int("Marks (0–100): ")
 
+    students[roll] = {"name": name, "marks": marks}
+    print("\n✅ Student added successfully!")
 
-def login():
-    print("\n--- Login ---")
-    username = input("Username: ")
-    password = input("Password: ")
+def view_students():
+    header("STUDENT LIST")
 
-    cursor.execute(
-        "SELECT id, balance FROM users WHERE username=? AND password=?",
-        (username, password)
-    )
-    result = cursor.fetchone()
+    if not students:
+        print("⚠ No students found.")
+        return
 
-    if result:
-        print("✅ Login successful!")
-        return result[0], result[1]
+    print(f"{'ROLL':<10}{'NAME':<30}{'MARKS':<10}")
+    line()
+
+    for roll, data in students.items():
+        print(f"{roll:<10}{data['name']:<30}{data['marks']:<10}")
+
+def search_student():
+    header("SEARCH STUDENT")
+    roll = input("Enter roll number: ")
+
+    if roll in students:
+        s = students[roll]
+        print("\n✅ Student Found")
+        print(f"Name  : {s['name']}")
+        print(f"Marks : {s['marks']}")
     else:
-        print("❌ Invalid credentials!")
-        return None, None
+        print("❌ Student not found!")
 
+def result_report():
+    header("RESULT REPORT")
 
-# ---------- BANK OPERATIONS ----------
-def deposit(user_id, balance):
-    amount = int(input("Enter deposit amount: "))
-    balance += amount
+    if not students:
+        print("⚠ No data available.")
+        return
 
-    cursor.execute(
-        "UPDATE users SET balance=? WHERE id=?",
-        (balance, user_id)
+    total = 0
+    highest = -1
+    topper = ""
+
+    for s in students.values():
+        total += s["marks"]
+        if s["marks"] > highest:
+            highest = s["marks"]
+            topper = s["name"]
+
+    average = total / len(students)
+
+    print(f"Total Students : {len(students)}")
+    print(f"Average Marks  : {average:.2f}")
+    print(f"Topper        : {topper}")
+    print(f"Highest Marks : {highest}")
+
+def ranking():
+    header("STUDENT RANKING")
+
+    if not students:
+        print("⚠ No students to rank.")
+        return
+
+    sorted_students = sorted(
+        students.items(),
+        key=lambda x: x[1]["marks"],
+        reverse=True
     )
 
-    cursor.execute(
-        "INSERT INTO transactions (user_id, action, amount, date) VALUES (?, ?, ?, ?)",
-        (user_id, "Deposit", amount, datetime.now())
-    )
+    print(f"{'RANK':<10}{'NAME':<30}{'MARKS':<10}")
+    line()
 
-    conn.commit()
-    print("💰 Deposit successful!")
-    return balance
+    rank = 1
+    for _, data in sorted_students:
+        print(f"{rank:<10}{data['name']:<30}{data['marks']:<10}")
+        rank += 1
 
+# ---------- MAIN MENU ----------
+def main_menu():
+    while True:
+        header("STUDENT MANAGEMENT SYSTEM")
+        print("1. Add Student")
+        print("2. View All Students")
+        print("3. Search Student")
+        print("4. Result Report")
+        print("5. Ranking")
+        print("6. Exit")
+        line()
 
-def withdraw(user_id, balance):
-    amount = int(input("Enter withdraw amount: "))
+        choice = input("Enter choice: ")
 
-    if amount > balance:
-        print("❌ Insufficient balance!")
-    else:
-        balance -= amount
-        cursor.execute(
-            "UPDATE users SET balance=? WHERE id=?",
-            (balance, user_id)
-        )
+        if choice == "1":
+            add_student()
+        elif choice == "2":
+            view_students()
+        elif choice == "3":
+            search_student()
+        elif choice == "4":
+            result_report()
+        elif choice == "5":
+            ranking()
+        elif choice == "6":
+            print("\n👋 Program exited safely. Thank you!")
+            break
+        else:
+            print("❌ Invalid option!")
 
-        cursor.execut
+        input("\nPress ENTER to continue...")
+
+# ---------- RUN ----------
+main_menu()
