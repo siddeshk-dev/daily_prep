@@ -22,7 +22,7 @@ def create_account():
     with open(USERS_FILE, "a") as f:
         f.write(f"{username},{password},{balance}\n")
 
-    print("✅ Account created successfully!")
+    print(" Account created successfully!")
 
 
 def login():
@@ -34,10 +34,10 @@ def login():
         for line in f:
             u, p, b = line.strip().split(",")
             if u == username and p == password:
-                print("✅ Login successful!")
+                print(" Login successful!")
                 return username, int(b)
 
-    print("❌ Invalid login!")
+    print(" Invalid login!")
     return None, None
 
 
@@ -73,12 +73,12 @@ def deposit(username, balance):
 def withdraw(username, balance):
     amount = int(input("Enter withdraw amount: "))
     if amount > balance:
-        print("❌ Insufficient balance!")
+        print(" Insufficient balance!")
     else:
         balance -= amount
         update_balance(username, balance)
         log_transaction(username, "Withdraw", amount)
-        print("💸 Withdraw successful!")
+        print(" Withdraw successful!")
     return balance
 
 
@@ -116,10 +116,10 @@ def user_menu(username, balance):
         elif choice == "4":
             view_transactions(username)
         elif choice == "5":
-            print("👋 Logged out!")
+            print(" Logged out!")
             break
         else:
-            print("❌ Invalid option!")
+            print(" Invalid option!")
 
 
 # ---------------- MAIN MENU ----------------
@@ -141,10 +141,10 @@ def main():
             if user:
                 user_menu(user, balance)
         elif choice == "3":
-            print("👋 Thank you!")
+            print(" Thank you!")
             break
         else:
-            print("❌ Invalid choice!")
+            print(" Invalid choice!")
 
 
 # ---------------- RUN PROGRAM ----------------
