@@ -16,7 +16,7 @@ def safe_int(message):
         if value.isdigit():
             return int(value)
         else:
-            print("❌ Enter numbers only!")
+            print(" Enter numbers only!")
 
 # ---------- CORE FUNCTIONS ----------
 def add_student():
@@ -24,14 +24,14 @@ def add_student():
     roll = input("Roll Number: ").strip()
 
     if roll in students:
-        print("❌ Roll number already exists!")
+        print(" Roll number already exists!")
         return
 
     name = input("Name: ").strip()
     marks = safe_int("Marks (0–100): ")
 
     students[roll] = {"name": name, "marks": marks}
-    print("\n✅ Student added successfully!")
+    print("\n Student added successfully!")
 
 def view_students():
     header("STUDENT LIST")
@@ -52,11 +52,11 @@ def search_student():
 
     if roll in students:
         s = students[roll]
-        print("\n✅ Student Found")
+        print("\n Student Found")
         print(f"Name  : {s['name']}")
         print(f"Marks : {s['marks']}")
     else:
-        print("❌ Student not found!")
+        print(" Student not found!")
 
 def result_report():
     header("RESULT REPORT")
@@ -128,10 +128,10 @@ def main_menu():
         elif choice == "5":
             ranking()
         elif choice == "6":
-            print("\n👋 Program exited safely. Thank you!")
+            print("\n Program exited safely. Thank you!")
             break
         else:
-            print("❌ Invalid option!")
+            print(" Invalid option!")
 
         input("\nPress ENTER to continue...")
 

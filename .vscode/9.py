@@ -56,7 +56,7 @@ class SmartTracker:
         with FileManager("activities.txt") as file:
             file.write(f"{activity}\n")
 
-        print("✅ Activity saved successfully!")
+        print(" Activity saved successfully!")
 
     @activity_logger
     def show_activities(self):
@@ -64,19 +64,19 @@ class SmartTracker:
             print("⚠ No activities recorded yet.")
             return
 
-        print("\n📊 Your Activities:\n")
+        print("\n Your Activities:\n")
         for act in activity_generator(self.activities):
-            print(f"📝 {act.name} | ⏱ {act.duration} min | 🕒 {act.timestamp}")
+            print(f" {act.name} |  {act.duration} min |  {act.timestamp}")
 
     @activity_logger
     def read_from_file(self):
-        print("\n📂 Activity History from File:\n")
+        print("\n Activity History from File:\n")
         try:
             with open("activities.txt", "r") as file:
                 for line in file:
                     print(line.strip())
         except FileNotFoundError:
-            print("❌ No file found yet.")
+            print(" No file found yet.")
 
 
 # ---------------- MAIN MENU ----------------
@@ -102,10 +102,10 @@ def main():
         elif choice == "3":
             tracker.read_from_file()
         elif choice == "4":
-            print("👋 Exiting program. Stay productive!")
+            print(" Exiting program. Stay productive!")
             break
         else:
-            print("❌ Invalid choice. Try again.")
+            print(" Invalid choice. Try again.")
 
 
 # ---------------- RUN ----------------
