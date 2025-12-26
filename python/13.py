@@ -43,7 +43,7 @@ def add_book():
 
 import random
 
-print("🎯 Welcome to the Number Guessing Game 🎯")
+print(" Welcome to the Number Guessing Game ")
 
 play_again = "yes"
 
@@ -57,7 +57,7 @@ while play_again.lower() == "yes":
 
 import random
 
-print("🎯 Welcome to the Number Guessing Game 🎯")
+print(" Welcome to the Number Guessing Game ")
 
 while True:
     secret_number = random.randint(1, 100)
@@ -70,23 +70,23 @@ while True:
 
         # Input validation
         if not guess.isdigit():
-            print("❌ Please enter a valid number.")
+            print(" Please enter a valid number.")
             continue
 
         guess = int(guess)
         attempts += 1
 
         if guess < secret_number:
-            print("📉 Too Low! Try again.")
+            print(" Too Low! Try again.")
         elif guess > secret_number:
-            print("📈 Too High! Try again.")
+            print(" Too High! Try again.")
         else:
-            print("\n🎉 Correct! You guessed the number.")
-            print("✅ Number:", secret_number)
-            print("🔢 Attempts:", attempts)
+            print("\n Correct! You guessed the number.")
+            print(" Number:", secret_number)
+            print(" Attempts:", attempts)
             break
 
     play_again = input("\nDo you want to play again? (yes/no): ").lower()
     if play_again != "yes":
-        print("\nThanks for playing! 👋")
+        print("\nThanks for playing! ")
         break

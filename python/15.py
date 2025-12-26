@@ -2,13 +2,13 @@
 balance = 10000
 correct_pin = "1234"
 
-print("🏧 Welcome to Python ATM")
+print(" Welcome to Python ATM")
 
 # PIN Verification
 pin = input("Enter your 4-digit PIN: ")
 
 if pin != correct_pin:
-    print("❌ Wrong PIN. Access Denied.")
+    print(" Wrong PIN. Access Denied.")
 else:
     while True:
         print("\n----- ATM MENU -----")

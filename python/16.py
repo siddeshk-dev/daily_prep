@@ -4,13 +4,13 @@ balance = 25000
 pin = "1234"
 
 print("=" * 1)
-print("        🏦 PYTHON NATIONAL BANK")
+print("         PYTHON NATIONAL BANK")
 print("=" * 1)
 
 entered_pin = input("Enter your 4-digit PIN: ")
 
 if entered_pin != pin:
-    print("\n❌ Incorrect PIN. Access Denied.")
+    print("\n Incorrect PIN. Access Denied.")
 else:
     while True:
         print("\n" + "-" * 1)
@@ -37,7 +37,7 @@ except:
         f.write(f"{pin},{balance}")
 
 print("=" * 45)
-print("        🏦 PYTHON NATIONAL BANK")
+print("         PYTHON NATIONAL BANK")
 print("=" * 45)
 
 entered_pin = input("Enter your 4-digit PIN: ")
