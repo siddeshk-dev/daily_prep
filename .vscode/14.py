@@ -1,11 +1,11 @@
 password = input("Enter password: ")
 
 if len(password) < 6:
-    print("Weak Password ❌")
+    print("Weak Password ")
 elif any(char.isdigit() for char in password) and any(char.isupper() for char in password):
-    print("Strong Password ✅")
+    print("Strong Password ")
 else:
-    print("Medium Password ⚠️")
+    print("Medium Password ")
 
 
 import random
@@ -15,7 +15,7 @@ secret = random.randint(1, 10)
 while True:
     guess = int(input("Guess number (1-10): "))
     if guess == secret:
-        print("Correct! 🎉")
+        print("Correct! ")
         break
     else:
         print("Try again")
