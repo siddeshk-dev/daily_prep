@@ -1,3 +1,4 @@
+# Student Management System
 students = {}
 
 # ---------- PRINT HELPERS ----------

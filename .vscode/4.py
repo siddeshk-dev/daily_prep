@@ -1,3 +1,4 @@
+# Username Generator and Student Marks Recorder
 def generate_username(name, year):
     username = name[:3].lower() + str(year)
     return username

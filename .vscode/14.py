@@ -1,3 +1,4 @@
+# Password Strength Checker, Number Guessing Game, Student Report Card, Simple Banking System       
 password = input("Enter password: ")
 
 if len(password) < 6:

@@ -1,3 +1,4 @@
+# Simple To-Do List Application
 tasks = []
 
 def show_menu():

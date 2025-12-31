@@ -1,181 +1,106 @@
-import os
-import datetime
+# AI-Like Fake News Detector
+import string
 
-USERS_FILE = "users.txt"
-TRANS_FILE = "transactions.txt"
+fake_keywords = {
+    "shocking", "breaking", "you won't believe", "secret",
+    "exposed", "miracle", "guaranteed", "click here",
+    "viral", "unbelievable", "truth revealed"
+}
 
+trusted_sources = {
+    "bbc", "cnn", "reuters", "the hindu", "ndtv",
+    "times of india", "associated press"
+}
 
-# ---------- Utility Functions ----------
-def log_transaction(username, message):
-    with open(TRANS_FILE, "a") as f:
-        time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        f.write(f"{time},{username},{message}\n")
+def clean_text(text):
+    text = text.lower()
+    for ch in string.punctuation:
+        text = text.replace(ch, "")
+    return text
 
+def keyword_score(text):
+    score = 0
+    reasons = []
 
-def load_users():
-    users = {}
-    if os.path.exists(USERS_FILE):
-        with open(USERS_FILE, "r") as f:
-            for line in f:
-                username, pin, balance = line.strip().split(",")
-                users[username] = {"pin": pin, "balance": int(balance)}
-    return users
+    for word in fake_keywords:
+        if word in text:
+            score += 2
+            reasons.append(f"Fake keyword detected: '{word}'")
 
+    return score, reasons
 
-def save_users(users):
-    with open(USERS_FILE, "w") as f:
-        for u in users:
-            f.write(f"{u},{users[u]['pin']},{users[u]['balance']}\n")
+def source_check(text):
+    for source in trusted_sources:
+        if source in text:
+            return -3, f"Trusted source mentioned: {source}"
+    return 0, "No trusted source mentioned"
 
+def style_check(text):
+    score = 0
+    reasons = []
 
-# ---------- Core Functions ----------
-def register_user(users):
-    username = input("Enter new username: ")
+    if text.count("!") >= 3:
+        score += 2
+        reasons.append("Too many exclamation marks")
 
-    if username in users:
-        print("User already exists.")
-        return
+    if text.isupper():
+        score += 3
+        reasons.append("Text written fully in capital letters")
 
-    pin = input("Set 4-digit PIN: ")
-    if not (pin.isdigit() and len(pin) == 4):
-        print("Invalid PIN format.")
-        return
+    return score, reasons
 
-    users[username] = {"pin": pin, "balance": 0}
-    save_users(users)
-    print("User registered successfully.")
-
-
-def login(users):
-    username = input("Username: ")
-    pin = input("PIN: ")
-
-    if username in users and users[username]["pin"] == pin:
-        print("Login successful.")
-        return username
+def ai_decision(total_score):
+    if total_score >= 5:
+        return "FAKE NEWS"
+    elif total_score >= 2:
+        return "SUSPICIOUS"
     else:
-        print("Invalid credentials.")
-        return None
+        return "LIKELY REAL"
 
+def analyze_news(news):
+    clean = clean_text(news)
 
-def deposit(users, username):
-    amt = input("Enter amount to deposit: ")
+    total_score = 0
+    explanations = []
 
-    if amt.isdigit():
-        amt = int(amt)
-        users[username]["balance"] += amt
-        save_users(users)
-        log_transaction(username, f"Deposited {amt}")
-        print("Amount deposited successfully.")
+    k_score, k_reasons = keyword_score(clean)
+    total_score += k_score
+    explanations.extend(k_reasons)
+
+    s_score, s_reason = source_check(clean)
+    total_score += s_score
+    explanations.append(s_reason)
+
+    st_score, st_reasons = style_check(news)
+    total_score += st_score
+    explanations.extend(st_reasons)
+
+    decision = ai_decision(total_score)
+
+    print("\n--- AI FAKE NEWS ANALYSIS REPORT ---")
+    print("Final Score:", total_score)
+    print("Verdict:", decision)
+
+    print("\nReasons:")
+    if explanations:
+        for e in explanations:
+            print("-", e)
     else:
-        print("Invalid amount.")
+        print("- No suspicious patterns found")
 
-
-def withdraw(users, username):
-    amt = input("Enter amount to withdraw: ")
-
-    if not amt.isdigit():
-        print("Invalid amount.")
-        return
-
-    amt = int(amt)
-    if amt > users[username]["balance"]:
-        print("Insufficient balance.")
-    else:
-        users[username]["balance"] -= amt
-        save_users(users)
-        log_transaction(username, f"Withdrawn {amt}")
-        print("Amount withdrawn successfully.")
-
-
-def transfer(users, username):
-    target = input("Enter receiver username: ")
-    amt = input("Enter amount: ")
-
-    if target not in users:
-        print("Receiver not found.")
-        return
-
-    if not amt.isdigit():
-        print("Invalid amount.")
-        return
-
-    amt = int(amt)
-    if amt > users[username]["balance"]:
-        print("Insufficient balance.")
-        return
-
-    users[username]["balance"] -= amt
-    users[target]["balance"] += amt
-    save_users(users)
-    log_transaction(username, f"Transferred {amt} to {target}")
-    log_transaction(target, f"Received {amt} from {username}")
-    print("Transfer completed successfully.")
-
-
-def show_transactions(username):
-    if not os.path.exists(TRANS_FILE):
-        print("No transactions found.")
-        return
-
-    print("\nTransaction History:")
-    with open(TRANS_FILE, "r") as f:
-        for line in f:
-            time, user, msg = line.strip().split(",", 2)
-            if user == username:
-                print(f"{time} - {msg}")
-
-
-# ---------- Main Program ----------
 def main():
-    users = load_users()
+    print("AI-Like Fake News Detector")
+    print("Paste news text below (type END to finish):\n")
 
+    lines = []
     while True:
-        print("\n==== BANK MANAGEMENT SYSTEM ====")
-        print("1. Register")
-        print("2. Login")
-        print("3. Exit")
-
-        choice = input("Choose option: ")
-
-        if choice == "1":
-            register_user(users)
-
-        elif choice == "2":
-            user = login(users)
-            if user:
-                while True:
-                    print("\n---- USER MENU ----")
-                    print("1. Check Balance")
-                    print("2. Deposit")
-                    print("3. Withdraw")
-                    print("4. Transfer")
-                    print("5. Transaction History")
-                    print("6. Logout")
-
-                    ch = input("Choose option: ")
-
-                    if ch == "1":
-                        print("Current Balance:", users[user]["balance"])
-                    elif ch == "2":
-                        deposit(users, user)
-                    elif ch == "3":
-                        withdraw(users, user)
-                    elif ch == "4":
-                        transfer(users, user)
-                    elif ch == "5":
-                        show_transactions(user)
-                    elif ch == "6":
-                        print("Logged out successfully.")
-                        break
-                    else:
-                        print("Invalid option.")
-
-        elif choice == "3":
-            print("Application closed.")
+        line = input()
+        if line.strip().upper() == "END":
             break
-        else:
-            print("Invalid option.")
+        lines.append(line)
 
+    news = " ".join(lines)
+    analyze_news(news)
 
 main()
+

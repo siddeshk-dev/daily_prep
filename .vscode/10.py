@@ -1,3 +1,4 @@
+# Shopping Cart and Simple Banking System
 cart = {}
 
 while True:

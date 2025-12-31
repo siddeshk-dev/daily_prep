@@ -1,3 +1,4 @@
+# Frequency Counter, Email Validator, Log Analyzer, and Simple Calculator
 nums = list(map(int, input("Enter numbers: ").split()))
 freq = {}
 

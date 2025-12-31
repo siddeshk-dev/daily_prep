@@ -1,3 +1,4 @@
+# Smart Activity Tracker with Decorators, Context Managers, Dataclasses, and Generators
 from dataclasses import dataclass
 from datetime import datetime
 import time
