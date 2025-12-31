@@ -1,3 +1,4 @@
+# AI-Like Text Analyzer its not taken from any ai sevices its my own project.
 import string
 
 positive_words = {

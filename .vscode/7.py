@@ -1,3 +1,4 @@
+# Simple Banking System with Account Creation, Login, Deposit, Withdraw, Balance Check, and Transaction History
 import os
 
 USERS_FILE = "users.txt"

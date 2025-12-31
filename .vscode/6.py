@@ -1,3 +1,4 @@
+# List Comprehension, File Handling, Lambda Functions, Match-Case Statement
 password = input("Enter password: ")
 
 if len(password) >= 8 and password.isalnum():

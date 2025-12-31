@@ -1,3 +1,4 @@
+# Simple Expense Tracker Application
 import os
 from datetime import datetime
 

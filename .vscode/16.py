@@ -1,5 +1,5 @@
 
-
+# Simple Calculator Application
 def add(a, b):
     return a + b
 

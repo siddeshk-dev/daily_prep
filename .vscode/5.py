@@ -1,3 +1,6 @@
+# List Comprehension, File Handling, Lambda Functions, Recursion, OOP, Random Module, Math Module, Prime Number Checker,
+#  Date and Time, Age Calculator, Fibonacci Sequence, Palindrome Checker, BMI Calculator, String Reversal, 
+# Largest Number Finder, Vowel Counter, Match-Case Statement, GCD Calculator
 numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 
 even_squares = [n*n for n in numbers if n % 2 == 0]

@@ -1,3 +1,4 @@
+# Student Management System and Password Strength Checker
 def add_student():
     name = input("Enter name: ")
     marks = input("Enter marks: ")

@@ -1,3 +1,4 @@
+# Simple Banking System and Quiz Application
 def get_balance():
     try:
         with open("balance.txt", "r") as f:
