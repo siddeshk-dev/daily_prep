@@ -1,3 +1,4 @@
+# AI-Like Intrusion Detection System
 from datetime import datetime
 
 FAILED_LIMIT = 3
@@ -5,7 +6,7 @@ ODD_HOURS = range(0, 6)
 
 def analyze_logs(logs):
     report = {}
-    alerts = []
+    alerts = set()   # prevent duplicate alerts
 
     for entry in logs:
         user, ip, status, time = entry
@@ -15,26 +16,28 @@ def analyze_logs(logs):
             report[user] = {
                 "failed": 0,
                 "ips": set(),
-                "risk": 0
+                "risk": 0,
+                "times": []
             }
+
+        report[user]["times"].append(time)
+        report[user]["ips"].add(ip)
 
         if status == "FAILED":
             report[user]["failed"] += 1
             report[user]["risk"] += 2
 
-        report[user]["ips"].add(ip)
-
-        if report[user]["failed"] >= FAILED_LIMIT:
-            report[user]["risk"] += 3
-            alerts.append(f"Brute force suspected for user {user}")
+            if report[user]["failed"] == FAILED_LIMIT:
+                report[user]["risk"] += 3
+                alerts.add(f"Brute force attack suspected for user '{user}'")
 
         if hour in ODD_HOURS:
             report[user]["risk"] += 1
-            alerts.append(f"Odd hour login detected for user {user}")
+            alerts.add(f"Odd-hour login activity for user '{user}'")
 
-        if len(report[user]["ips"]) > 2:
+        if len(report[user]["ips"]) == 3:
             report[user]["risk"] += 2
-            alerts.append(f"Multiple IPs detected for user {user}")
+            alerts.add(f"Multiple IP access detected for user '{user}'")
 
     return report, alerts
 
@@ -47,7 +50,8 @@ def final_decision(risk):
         return "LOW RISK"
 
 def main():
-    print("AI-Like Intrusion Detection System\n")
+    print("AI-Like Intrusion Detection System")
+    print("Scan Time:", datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "\n")
 
     logs = [
         ("admin", "192.168.1.2", "FAILED", "01:20"),
@@ -64,15 +68,17 @@ def main():
         level = final_decision(data["risk"])
         print(f"\nUser: {user}")
         print("Failed Attempts:", data["failed"])
+        print("Login Times:", data["times"])
         print("IP Addresses:", list(data["ips"]))
         print("Risk Score:", data["risk"])
         print("Risk Level:", level)
 
     print("\n--- SECURITY ALERTS ---")
     if alerts:
-        for a in set(alerts):
-            print("-", a)
+        for alert in alerts:
+            print("-", alert)
     else:
         print("No alerts detected")
 
 main()
+
